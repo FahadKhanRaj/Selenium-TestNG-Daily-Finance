@@ -1,4 +1,4 @@
-# 🔐 DailyFinance QA Automation Project
+# 🔐 DailyFinance TestNG QA Automation Project
 
 This project automates and verifies key user workflows for [DailyFinance](https://dailyfinance.roadtocareer.net/) using Selenium WebDriver, TestNG, JavaFaker, and Allure reports.
 
