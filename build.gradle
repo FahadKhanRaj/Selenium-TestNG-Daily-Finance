@@ -1,0 +1,61 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation("org.seleniumhq.selenium:selenium-java:4.31.0")
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation("org.testng:testng:7.10.2")
+    // https://mvnrepository.com/artifact/com.github.javafaker/javafaker
+    implementation("com.github.javafaker:javafaker:1.0.2")
+    // https://mvnrepository.com/artifact/com.googlecode.json-simple/json-simple
+    implementation("com.googlecode.json-simple:json-simple:1.1.1")
+    // https://mvnrepository.com/artifact/org.apache.commons/commons-csv
+    implementation("org.apache.commons:commons-csv:1.14.0")
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    implementation("io.qameta.allure:allure-testng:2.29.1")
+    // https://mvnrepository.com/artifact/io.rest-assured/rest-assured
+    testImplementation("io.rest-assured:rest-assured:5.5.1")
+    // https://mvnrepository.com/artifact/io.qameta.allure/allure-testng
+    implementation("io.qameta.allure:allure-testng:2.29.1")
+
+
+    // HTTP Client
+    implementation 'org.apache.httpcomponents:httpclient:4.5.13'
+
+    // JSON Processing (Jackson)
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+    implementation 'com.google.code.gson:gson:2.10.1' // Alternative JSON parser
+
+    implementation 'io.github.cdimascio:dotenv-java:3.0.0'
+
+
+
+
+
+
+}
+
+test {
+    useTestNG(){
+        if(project.hasProperty("email") && project.hasProperty("password")){
+            systemProperties.put("email",project.property("email"))
+            systemProperties.put("password",project.property("password"))
+
+            print(project.property("email"))
+            print(project.property("password"))
+        }
+        if(project.hasProperty("suiteName")){
+            systemProperties.put("suiteName",project.property("suiteName"))
+        }
+        suites "./src/test/resources/"+systemProperties.get("suiteName")
+    }
+}
