@@ -111,6 +111,12 @@ Watch the full test run in action:
 
 🎥 [Click to Watch](https://drive.google.com/file/d/1pId_U8nY1DVs3UHNUGCB86vTUr6z9kOf/view?usp=sharing)
 
+
+## 🚀 Test Case
+
+🎥 [Click to View](https://docs.google.com/spreadsheets/d/1F1McPZFq2PRc862pB6B9iBm0IfbNnXxE/edit?usp=sharing&ouid=105349127845448132729&rtpof=true&sd=true)
+
+
 ## 🚀 Allure Report Screenshots
 
 ![testNG SS1](https://github.com/user-attachments/assets/67e9a008-188b-4691-a6fa-2de5285b055a)
